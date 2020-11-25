@@ -4,7 +4,9 @@ var
 BEGIN
   assign(input, 'input.txt');
   rewrite(input);
-  ReadLn(STRING_Input);
-  WriteLn(input, STRING_Input);
+  WHILE STRING_Input <> 'end' DO BEGIN
+    ReadLn(STRING_Input);
+    WriteLn(input, STRING_Input);
+  END;
   close(input);
 END.

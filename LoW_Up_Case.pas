@@ -1,18 +1,19 @@
-CONST
-  high = ['A'..'Z'];
 var
   input, output: text;
-  STRING_Input: STRING;
-  i: INTEGER;
+  Char_input: CHAR;
+  STRING_mas: STRING;
 BEGIN
+  STRING_mas := '';
   assign(input, 'input.txt');
   reset(input);
-  read(input, STRING_Input);
   assign(output, 'output.txt');
   rewrite(output);
-  for i := 1 to length(STRING_Input) do
-    if (STRING_Input[i] in high) then STRING_Input[i] := lowercase(STRING_Input[i]);
-    Write(output, STRING_Input);
+  WHILE not eof(input) DO BEGIN
+    ReadLn(input, STRING_mas);
+    STRING_mas := lowercase(STRING_mas);
+    Writeln(output, STRING_mas);
+    STRING_mas := '';
+  END;
     close(output);
     close(input);
 END.
