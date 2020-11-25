@@ -12,7 +12,6 @@ BEGIN
     ReadLn(input, STRING_mas);
     STRING_mas := lowercase(STRING_mas);
     Writeln(output, STRING_mas);
-    STRING_mas := '';
   END;
     close(output);
     close(input);
